@@ -200,22 +200,6 @@
       <GroupNumber>1</GroupNumber>
       <FileNumber>2</FileNumber>
       <FileType>1</FileType>
-      <tvExp>1</tvExp>
-      <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
-      <bDave2>0</bDave2>
-      <PathWithFileName>.\PeriodicTimer0AInts.c</PathWithFileName>
-      <FilenameWithoutPath>PeriodicTimer0AInts.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>1</GroupNumber>
-      <FileNumber>3</FileNumber>
-      <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
@@ -230,7 +214,7 @@
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
-      <FileNumber>4</FileNumber>
+      <FileNumber>3</FileNumber>
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
@@ -246,7 +230,7 @@
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
-      <FileNumber>5</FileNumber>
+      <FileNumber>4</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -262,17 +246,33 @@
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
+      <FileNumber>5</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>1</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>1</TopLine>
+      <CurrentLine>21</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\DAC.c</PathWithFileName>
+      <FilenameWithoutPath>DAC.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>1</GroupNumber>
       <FileNumber>6</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>29</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>19</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\DAC.c</PathWithFileName>
-      <FilenameWithoutPath>DAC.c</FilenameWithoutPath>
+      <PathWithFileName>.\ST7735.c</PathWithFileName>
+      <FilenameWithoutPath>ST7735.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -284,11 +284,11 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>61</TopLine>
+      <CurrentLine>1</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\ST7735.c</PathWithFileName>
-      <FilenameWithoutPath>ST7735.c</FilenameWithoutPath>
+      <PathWithFileName>.\Lab5.c</PathWithFileName>
+      <FilenameWithoutPath>Lab5.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

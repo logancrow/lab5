@@ -6,6 +6,13 @@
 
 #include "stdint.h"
 
+struct note{
+	uint32_t frequency;
+	uint32_t length;
+};
+
+struct note song[100];
+
 //initializes SSI1 for DAC interface
 //input parameters: none
 //output parameters: none

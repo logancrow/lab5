@@ -200,27 +200,11 @@
       <GroupNumber>1</GroupNumber>
       <FileNumber>2</FileNumber>
       <FileType>1</FileType>
-      <tvExp>1</tvExp>
-      <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>55</TopLine>
-      <CurrentLine>1</CurrentLine>
-      <bDave2>0</bDave2>
-      <PathWithFileName>.\PeriodicTimer0AInts.c</PathWithFileName>
-      <FilenameWithoutPath>PeriodicTimer0AInts.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>1</GroupNumber>
-      <FileNumber>3</FileNumber>
-      <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>39</TopLine>
+      <TopLine>1</TopLine>
       <CurrentLine>1</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\Timer0A.c</PathWithFileName>
@@ -230,7 +214,7 @@
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
-      <FileNumber>4</FileNumber>
+      <FileNumber>3</FileNumber>
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
@@ -246,7 +230,7 @@
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
-      <FileNumber>5</FileNumber>
+      <FileNumber>4</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -262,7 +246,7 @@
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
-      <FileNumber>6</FileNumber>
+      <FileNumber>5</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -278,7 +262,7 @@
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
-      <FileNumber>7</FileNumber>
+      <FileNumber>6</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -289,6 +273,22 @@
       <bDave2>0</bDave2>
       <PathWithFileName>.\ST7735.c</PathWithFileName>
       <FilenameWithoutPath>ST7735.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>1</GroupNumber>
+      <FileNumber>7</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>0</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>1</TopLine>
+      <CurrentLine>1</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\Lab5.c</PathWithFileName>
+      <FilenameWithoutPath>Lab5.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

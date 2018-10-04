@@ -7,7 +7,7 @@
 
   <Targets>
     <Target>
-      <TargetName>PeriodicTimer0AInts</TargetName>
+      <TargetName>Lab5</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <TargetOption>
@@ -45,7 +45,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\</OutputDirectory>
-          <OutputName>PeriodicTimer0AInts</OutputName>
+          <OutputName>Lab5</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
@@ -424,6 +424,21 @@
               <FileName>PLL.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\PLL.c</FilePath>
+            </File>
+            <File>
+              <FileName>Switch.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Switch.c</FilePath>
+            </File>
+            <File>
+              <FileName>DAC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\DAC.c</FilePath>
+            </File>
+            <File>
+              <FileName>ST7735.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\ST7735.c</FilePath>
             </File>
           </Files>
         </Group>
