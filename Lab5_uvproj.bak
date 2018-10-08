@@ -411,11 +411,6 @@
               <FilePath>.\startup.s</FilePath>
             </File>
             <File>
-              <FileName>PeriodicTimer0AInts.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\PeriodicTimer0AInts.c</FilePath>
-            </File>
-            <File>
               <FileName>Timer0A.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Timer0A.c</FilePath>
@@ -439,6 +434,11 @@
               <FileName>ST7735.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\ST7735.c</FilePath>
+            </File>
+            <File>
+              <FileName>Lab5.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lab5.c</FilePath>
             </File>
           </Files>
         </Group>
