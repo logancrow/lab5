@@ -7,6 +7,7 @@
 #include "Switch.h"
 #include "../inc/tm4c123gh6pm.h"
 #include "Music.h"
+#include "Timer1.h"
 
 long StartCritical (void);    // previous I bit, disable interrupts
 void EndCritical(long sr);    // restore I bit to previous value
@@ -37,6 +38,7 @@ void SwitchInit(void){
 	GPIO_PORTB_AMSEL_R = 0;          // disable analog functionality on PF
 }
 
+#define PF2       (*((volatile uint32_t *)0x40025010))
 
 //Plays/Pauses music by enabling/disabling Timer0
 //input parameters: none
@@ -44,6 +46,8 @@ void SwitchInit(void){
 void Pause(void){
 	long sr;
 	sr = StartCritical();
+	//PF2 ^= 0x04;
+	//PF2 ^= 0x04;
 	if(TIMER1_CTL_R == 0x00000000){
 		TIMER1_CTL_R = 0x00000001;    // toggle
 		TIMER0_CTL_R = 0x00000001;
@@ -51,18 +55,24 @@ void Pause(void){
 		TIMER1_CTL_R = 0x00000000;    // toggle
 		TIMER0_CTL_R = 0x00000000;
 	}
+	//PF2 ^= 0x04;
 	EndCritical(sr);
 	DelayWait10ms(100);             // debounce
 }
+#define PF1       (*((volatile uint32_t *)0x40025008))
 
 void Rewind(){
 	long sr;
 	sr = StartCritical();
+	//PF1 ^= 0x02;
+	//PF1 ^= 0x02;
 	TIMER0_CTL_R = 0x00000000;    // disable timer 0
 	TIMER1_CTL_R = 0x00000000;    // disable timer 1
-	Global_Init();
-	TIMER1_CTL_R = 0x00000001;    // enable timer 0
-	TIMER0_CTL_R = 0x00000001;    // enable timer 1
+	i = 0;
+	counter = 1;
+	//TIMER1_CTL_R = 0x00000001;    // enable timer 0
+	//TIMER0_CTL_R = 0x00000001;    // enable timer 1
+	//PF1 ^= 0x02;
 	EndCritical(sr);
 	DelayWait10ms(100);             // debounce
 }

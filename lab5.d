@@ -8,3 +8,4 @@
 .\lab5.o: Switch.h
 .\lab5.o: DAC.h
 .\lab5.o: Timer1.h
+.\lab5.o: Switch.h

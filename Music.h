@@ -9,7 +9,7 @@
 extern uint8_t counter;
 extern int8_t i;
 
-/*#define d1 4257
+#define d1 4257
 #define e1 3792
 #define f1  3579
 #define gf1  3378
@@ -24,9 +24,9 @@ extern int8_t i;
 #define g2  1594
 #define a2  1420
 #define b2  1265
-#define c2  1194*/
+#define c2  1194
 
-#define d1 8513
+/*#define d1 8513
 #define e1 7584
 #define f1  7159
 #define gf1  6757
@@ -41,7 +41,7 @@ extern int8_t i;
 #define g2  3189
 #define a2  2841
 #define b2  2531
-#define c2  2389
+#define c2  2389*/
 
 #define enote  1
 #define qnote  2

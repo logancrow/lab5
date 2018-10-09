@@ -6,6 +6,8 @@
 
 #include "stdint.h"
 
+extern uint8_t instrument;
+
 //initializes SSI1 for DAC interface
 //input parameters: none
 //output parameters: none

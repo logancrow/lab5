@@ -32,4 +32,7 @@
 // Outputs: none
 void Timer1_Init(void);
 
+void rewind(void);
+
+
 #endif // __TIMER2INTS_H__

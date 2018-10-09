@@ -65,7 +65,7 @@ void Timer0A_Init(void(*task)(void), uint32_t period){long sr;
 #define PF3       (*((volatile uint32_t *)0x40025020))
 void Timer0A_Handler(void){
   TIMER0_ICR_R = TIMER_ICR_TATOCINT;// acknowledge timer0A timeout
-	PF2 ^= 0x04;
+	//PF2 ^= 0x04;
   (*PeriodicTask)();                // execute user task
 }
 

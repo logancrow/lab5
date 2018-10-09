@@ -7,6 +7,7 @@
 #include "DAC.h"
 #include "../inc/tm4c123gh6pm.h"
 
+uint8_t instrument = 0;
 
 const unsigned short Wave[32] = {
 	1024, 1122, 1215, 1302, 1378, 1440, 1486, 1514, 1524, 1514, 1486, 
@@ -50,6 +51,11 @@ void DAC_Init(void){
 //output parameters: none
 void DAC_Out(){
 	PF3 ^= 0x08;
-	SSI0_DR_R = (Wave[j] & 0x0FFF) | 0xC000;               // load 'value' into transmit FIFO
+	if (instrument == 0) {
+		SSI0_DR_R = (Wave[j] & 0x0FFF) | 0xC000;               // load 'value' into transmit FIFO
+	}
+	else {
+		SSI0_DR_R = (Trumpet[j] & 0x0FFF) | 0xC000;
+	}
 	j = (j + 1)%32;
 }
