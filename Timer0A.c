@@ -72,6 +72,6 @@ void Timer0A_Handler(void){
 //resets timer0A to specefied frequency
 void Timer0A_Freq(uint32_t period){
 	 //TIMER0_CTL_R = 0x00000000;    // 1) disable TIMER0A during setup
-	 TIMER0_TAILR_R = period-1;    // 4) reload value
+	 TIMER0_TAILR_R = period-1;      // 4) reload value
 	 //TIMER0_CTL_R = 0x00000001;    // 10) enable TIMER0A
 }

@@ -10,6 +10,8 @@
 
 long StartCritical (void);    // previous I bit, disable interrupts
 void EndCritical(long sr);    // restore I bit to previous value
+extern uint8_t counter;
+extern int8_t i;
 
 //pass a number and that number * 10ms will be waited
 void DelayWait10ms(uint32_t n){
@@ -58,7 +60,9 @@ void Rewind(){
 	sr = StartCritical();
 	TIMER0_CTL_R = 0x00000000;    // disable timer 0
 	TIMER1_CTL_R = 0x00000000;    // disable timer 1
-	i = 0;
+	Global_Init();
+	TIMER1_CTL_R = 0x00000001;    // enable timer 0
+	TIMER0_CTL_R = 0x00000001;    // enable timer 1
 	EndCritical(sr);
-	DelayWait10ms(10);             // debounce
+	DelayWait10ms(100);             // debounce
 }

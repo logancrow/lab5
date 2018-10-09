@@ -7,9 +7,9 @@
 #include "stdint.h"
 
 extern uint8_t counter;
-extern uint8_t i;
+extern int8_t i;
 
-#define d1 4257
+/*#define d1 4257
 #define e1 3792
 #define f1  3579
 #define gf1  3378
@@ -24,7 +24,24 @@ extern uint8_t i;
 #define g2  1594
 #define a2  1420
 #define b2  1265
-#define c2  1194
+#define c2  1194*/
+
+#define d1 8513
+#define e1 7584
+#define f1  7159
+#define gf1  6757
+#define g1  6378
+#define a1  5682
+#define b1  5062
+#define c1  4778
+#define d2  4257
+#define e2  3792
+#define f2  3579
+#define gf2  3378
+#define g2  3189
+#define a2  2841
+#define b2  2531
+#define c2  2389
 
 #define enote  1
 #define qnote  2

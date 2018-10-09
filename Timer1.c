@@ -25,8 +25,8 @@
 #include "Music.h"
 #include "Timer0A.h"
 
-uint8_t counter;
-uint8_t i;
+extern uint8_t counter;
+extern int8_t i;
 
 // ***************** TIMER1_Init ****************
 // Activate TIMER1 interrupts to run user task periodically

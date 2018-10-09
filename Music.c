@@ -6,6 +6,8 @@
 
 #include "Music.h"
 
+uint8_t counter;
+int8_t i;
 
 //plays song through hardware
 //input parameters: pointer to song data structure
