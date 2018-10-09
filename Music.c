@@ -19,26 +19,26 @@ struct note song[96] = {
 	 {b1, enote}, {a1, enote}, {b1, hnote}, {b1, enote}, {b1, enote},
 	 {c1, qnote}, {c1, qnote}, {c1, enote}, {b1, enote}, {a1, enote}, {b1, enote},
 	 {g1, qnote}, {g1, qnote}, {g2, wnote},
-   {gf2, enote}, {a2, enote}, {gf2, enote}, {d2, enote},
+   {gf2, enote}, {g2, enote}, {gf2, enote}, {d2, enote},
 	 
 	 //6*2 + 4*3 + 1 = 12+12+1 = 25 --> 53
 	 {e1, hnote}, 
 	 {c1, qnote}, {c1, qnote}, {c1, enote}, {b1, enote}, {a1, enote}, {b1, enote},
 	 {g1, qnote}, {g1, qnote}, {g2, wnote},
-	 {f1, enote}, {g2, enote}, {a2, enote}, {f1, enote},
-	 {e1, hnote}, {e1, enote}, {f1, enote}, {g2, enote}, {e1, enote},
+	 {gf1, enote}, {g2, enote}, {b2, enote}, {gf1, enote},
+	 {e1, hnote}, {e1, enote}, {gf1, enote}, {g2, enote}, {e1, enote},
 	 {c1, qnote}, {c1, qnote}, {c1, enote}, {b1, enote}, {a1, enote}, {b1, enote},
 	 
 	 //6 + 4*3 + 3 = 9+12 = 21 --> 74
 	 {g1, qnote}, {g1, qnote}, {g2, wnote},
-	 {f1, enote}, {g2, enote}, {f1, enote}, {d1, enote},
+	 {gf1, enote}, {g2, enote}, {gf1, enote}, {d1, enote},
 	 {e1, wnote},
 	 {c1, qnote}, {c1, qnote}, {c1, enote}, {b1, enote}, {a1, enote}, {b1, enote},
 	 {g1, qnote}, {g1, qnote}, {g2, wnote},
-	 {f1, enote}, {g2, enote}, {a1, enote}, {f1, enote},
+	 {gf1, enote}, {g2, enote}, {b2, enote}, {gf1, enote},
 	 
 	 //5*2 + 2 = 12 --> 96
-	 {e1, hnote}, {e1, enote}, {f1, enote}, {g2, enote}, {e1, enote},
+	 {e1, hnote}, {e1, enote}, {gf1, enote}, {g2, enote}, {e1, enote},
 	 {c1, qnote}, {c1, qnote}, {c1, enote}, {b1, enote}, {a1, enote}, {b1, enote},
 	 {g1, wnote}
 };
