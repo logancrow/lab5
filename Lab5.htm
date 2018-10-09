@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Lab5.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Lab5.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Tue Oct 09 11:34:07 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Tue Oct 09 16:23:56 2018
 <BR><P>
 <H3>Maximum Stack Usage =         40 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -807,7 +807,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[97]"></a>Rewind</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, switch.o(i.Rewind))
+<P><STRONG><a name="[97]"></a>Rewind</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, switch.o(i.Rewind))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16 + Unknown Stack Size
 <LI>Call Chain = Rewind &rArr; DelayWait10ms
 </UL>
@@ -826,7 +826,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer1A_Handler
 </UL>
 
-<P><STRONG><a name="[20]"></a>Timer0A_Handler</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, timer0a.o(i.Timer0A_Handler))
+<P><STRONG><a name="[20]"></a>Timer0A_Handler</STRONG> (Thumb, 50 bytes, Stack size 8 bytes, timer0a.o(i.Timer0A_Handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Timer0A_Handler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup.o(RESET)
@@ -841,7 +841,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[22]"></a>Timer1A_Handler</STRONG> (Thumb, 94 bytes, Stack size 8 bytes, timer1.o(i.Timer1A_Handler))
+<P><STRONG><a name="[22]"></a>Timer1A_Handler</STRONG> (Thumb, 128 bytes, Stack size 8 bytes, timer1.o(i.Timer1A_Handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Timer1A_Handler &rArr; __aeabi_d2uiz
 </UL>
 <BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
@@ -853,7 +853,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[8a]"></a>main</STRONG> (Thumb, 134 bytes, Stack size 0 bytes, lab5.o(i.main))
+<P><STRONG><a name="[8a]"></a>main</STRONG> (Thumb, 126 bytes, Stack size 0 bytes, lab5.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32 + Unknown Stack Size
 <LI>Call Chain = main &rArr; __aeabi_d2uiz
 </UL>

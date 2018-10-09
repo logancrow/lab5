@@ -88,9 +88,9 @@ int main(void){
 	TIMER1_CTL_R = 0x00000000;    // turn off timer 1
 	TIMER0_CTL_R = 0x00000000;
   while(1){
-			if(PB0 == 0x01) Pause();
-			if((GPIO_PORTB_DATA_R & 0x02) == 0x02) Rewind();
-			if((GPIO_PORTB_DATA_R & 0x04) == 0x04) {
+			if((GPIO_PORTB_DATA_R & 0x01) == 0x01) Pause(); //PB0
+			if((GPIO_PORTB_DATA_R & 0x02) == 0x02) Rewind(); //PB1
+			if((GPIO_PORTB_DATA_R & 0x04) == 0x04) { //PB2
 				if (instrument == 1) instrument = 0;
 				else instrument = 1;
 				DelayWait10ms(100);

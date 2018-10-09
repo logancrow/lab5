@@ -24,6 +24,7 @@
 #include "../inc/tm4c123gh6pm.h"
 #include "Music.h"
 #include "Timer0A.h"
+#include "Switch.h"
 
 extern uint8_t counter;
 extern int8_t i;
@@ -54,15 +55,15 @@ void Timer1_Init(){
 #define PF3       (*((volatile uint32_t *)0x40025020))
 void Timer1A_Handler(void){
   TIMER1_ICR_R = TIMER_ICR_TATOCINT;// acknowledge TIMER1A timeout
-	PF1 ^= 0x02;
-	PF1 ^= 0x02;
+	//PF1 ^= 0x02;
+	//PF1 ^= 0x02;
   if(counter == 0){
 		i = (i + 1)%96;
 		Timer0A_Freq(song[i].freq);
 		counter = song[i].length;
 	}
 	counter--;
-	PF1 ^= 0x02;
+	//PF1 ^= 0x02;
 }
 
 void rewind(void) {

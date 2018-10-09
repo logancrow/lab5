@@ -3,3 +3,4 @@
 .\timer1.o: ../inc/tm4c123gh6pm.h
 .\timer1.o: Music.h
 .\timer1.o: Timer0A.h
+.\timer1.o: Switch.h
