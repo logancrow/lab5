@@ -9,6 +9,7 @@
 extern uint8_t counter;
 extern uint8_t i;
 
+#define d1 4257
 #define e1 3792
 #define f1  3579
 #define gf1  3378
@@ -35,7 +36,7 @@ struct note{
 	uint32_t length;
 };
 
-extern struct note song[30];
+extern struct note song[96];
 
 //plays song through hardware
 //input parameters: pointer to song data structure

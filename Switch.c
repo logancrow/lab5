@@ -28,10 +28,11 @@ void DelayWait10ms(uint32_t n){
 //output parameters: none
 void SwitchInit(void){
 	SYSCTL_RCGCGPIO_R |= 0x02;
-  while((SYSCTL_PRGPIO_R&0x02)!=0x02){}; // allow time for clock to start		
+  while((SYSCTL_PRGPIO_R&0x0002)== 0){}; // allow time for clock to start		
 	GPIO_PORTB_DEN_R |= 0x07;	//PB0-2 enable
 	GPIO_PORTB_DIR_R &=~ 0x07; //PB0-2 input	
   GPIO_PORTB_AFSEL_R &= ~0x07; //disable alternate function
+	GPIO_PORTB_AMSEL_R = 0;          // disable analog functionality on PF
 }
 
 
@@ -39,9 +40,17 @@ void SwitchInit(void){
 //input parameters: none
 //output parameters: none
 void Pause(void){
-	TIMER0_CTL_R ^= 0x00000001;    // toggle timer 0
-	TIMER1_CTL_R ^= 0x00000001;    // toggle timer 1
-	DelayWait10ms(10);             // debounce
+	long sr;
+	sr = StartCritical();
+	if(TIMER1_CTL_R == 0x00000000){
+		TIMER1_CTL_R = 0x00000001;    // toggle
+		TIMER0_CTL_R = 0x00000001;
+	}else{
+		TIMER1_CTL_R = 0x00000000;    // toggle
+		TIMER0_CTL_R = 0x00000000;
+	}
+	EndCritical(sr);
+	DelayWait10ms(100);             // debounce
 }
 
 void Rewind(){

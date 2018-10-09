@@ -82,10 +82,10 @@ int main(void){
 	Global_Init();
 	PortFInit();
   EnableInterrupts();
-	TIMER0_CTL_R = 0x00000000;    // turn off timer 0
-	TIMER1_CTL_R = 0x00000000;    // turn off timer 1
+	//TIMER1_CTL_R = 0x00000000;    // turn off timer 1
+	//TIMER0_CTL_R = 0x00000000;
   while(1){
-			if(PB0) Pause(); 
+			//if(PB0) Pause();
 			//if(PB1) Rewind();
   }
 }

@@ -56,7 +56,7 @@ void Timer1A_Handler(void){
   TIMER1_ICR_R = TIMER_ICR_TATOCINT;// acknowledge TIMER1A timeout
 	PF1 ^= 0x02;
   if(counter == 0){
-		i = (i + 1)%30;
+		i = (i + 1)%96;
 		Timer0A_Freq(song[i].freq);
 		counter = song[i].length;
 	}
