@@ -6,6 +6,10 @@
 
 #include "Switch.h"
 #include "../inc/tm4c123gh6pm.h"
+#include "Music.h"
+
+long StartCritical (void);    // previous I bit, disable interrupts
+void EndCritical(long sr);    // restore I bit to previous value
 
 //pass a number and that number * 10ms will be waited
 void DelayWait10ms(uint32_t n){
@@ -25,8 +29,8 @@ void DelayWait10ms(uint32_t n){
 void SwitchInit(void){
 	SYSCTL_RCGCGPIO_R |= 0x02;
   while((SYSCTL_PRGPIO_R&0x02)!=0x02){}; // allow time for clock to start		
-	GPIO_PORTB_DEN_R |= 0x07;	//PD0-3 enable
-	GPIO_PORTB_DIR_R &= 0xF8; //PD0-3 input	
+	GPIO_PORTB_DEN_R |= 0x07;	//PB0-2 enable
+	GPIO_PORTB_DIR_R &=~ 0x07; //PB0-2 input	
   GPIO_PORTB_AFSEL_R &= ~0x07; //disable alternate function
 }
 
@@ -36,5 +40,16 @@ void SwitchInit(void){
 //output parameters: none
 void Pause(void){
 	TIMER0_CTL_R ^= 0x00000001;    // toggle timer 0
+	TIMER1_CTL_R ^= 0x00000001;    // toggle timer 1
+	DelayWait10ms(10);             // debounce
+}
+
+void Rewind(){
+	long sr;
+	sr = StartCritical();
+	TIMER0_CTL_R = 0x00000000;    // disable timer 0
+	TIMER1_CTL_R = 0x00000000;    // disable timer 1
+	i = 0;
+	EndCritical(sr);
 	DelayWait10ms(10);             // debounce
 }

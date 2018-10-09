@@ -23,6 +23,7 @@
 #include <stdint.h>
 #include "../inc/tm4c123gh6pm.h"
 #include "Music.h"
+#include "Timer0A.h"
 
 uint8_t counter;
 uint8_t i;
@@ -48,10 +49,15 @@ void Timer1_Init(){
   TIMER1_CTL_R = 0x00000001;    // 10) enable TIMER1A
 }
 
+#define PF1       (*((volatile uint32_t *)0x40025008))
+#define PF2       (*((volatile uint32_t *)0x40025010))
+#define PF3       (*((volatile uint32_t *)0x40025020))
 void Timer1A_Handler(void){
   TIMER1_ICR_R = TIMER_ICR_TATOCINT;// acknowledge TIMER1A timeout
+	PF1 ^= 0x02;
   if(counter == 0){
 		i = (i + 1)%30;
+		Timer0A_Freq(song[i].freq);
 		counter = song[i].length;
 	}
 	counter--;

@@ -43,6 +43,9 @@
 #define PF1       (*((volatile uint32_t *)0x40025008))
 #define PF2       (*((volatile uint32_t *)0x40025010))
 #define PF3       (*((volatile uint32_t *)0x40025020))
+#define PB0       (*((volatile uint32_t *)0x40005004))
+#define PB1       (*((volatile uint32_t *)0x40005008))
+#define PB2       (*((volatile uint32_t *)0x40005010))
 
 
 void DisableInterrupts(void); // Disable interrupts
@@ -54,31 +57,12 @@ void WaitForInterrupt(void);  // low power mode
 void UserTask(void){
 }
 // if desired interrupt frequency is f, Timer0A_Init parameter is busfrequency/f
-#define F16HZ (50000000/16)
-#define F20KHZ (50000000/20000)
+#define F16HZ 2389
+#define F20KHZ 3500
 
 
-int main(void){ 
-  PLL_Init(Bus80MHz);              // bus clock at 50 MHz
-	ST7735_InitR(INITR_REDTAB);
-	ST7735_FillScreen(ST7735_BLACK);
-	SwitchInit();
-	DAC_Init();
-  Timer0A_Init(&DAC_Out, F16HZ);  // initialize timer0A (16 Hz)
-	Timer1_Init();
-	Global_Init();
-  EnableInterrupts();
-	ST7735_SetCursor(0,0);
-	ST7735_OutString("Play/Pause:      sw0\r");
-	ST7735_SetCursor(0,1);
-	ST7735_OutString("Stop and Rewind: sw1\r");
-	//TIMER0_CTL_R &=~ 0x00000001;    // turn off timer 0
-  while(1){		
-    Timer0A_Freq(song[i].freq);
-  }
-}
-
-/*  SYSCTL_RCGCGPIO_R |= 0x20;       // activate port F
+void PortFInit(){
+  SYSCTL_RCGCGPIO_R |= 0x20;       // activate port F
   while((SYSCTL_PRGPIO_R&0x0020) == 0){};// ready?
   GPIO_PORTF_DIR_R |= 0x0E;        // make PF3-1 output (PF3-1 built-in LEDs)
   GPIO_PORTF_AFSEL_R &= ~0x0E;     // disable alt funct on PF3-1
@@ -86,5 +70,23 @@ int main(void){
                                    // configure PF3-1 as GPIO
   GPIO_PORTF_PCTL_R = (GPIO_PORTF_PCTL_R&0xFFFFF0FF)+0x00000000;
   GPIO_PORTF_AMSEL_R = 0;          // disable analog functionality on PF
-  LEDS = 0;                        // turn all LEDs off
-*/
+}
+
+
+int main(void){ 
+  PLL_Init(Bus80MHz);              // bus clock at 80 MHz
+	SwitchInit();
+	DAC_Init();
+  Timer0A_Init(&DAC_Out, song[0].freq);  // initialize timer0A (16 Hz)
+	Timer1_Init();
+	Global_Init();
+	PortFInit();
+  EnableInterrupts();
+	TIMER0_CTL_R = 0x00000000;    // turn off timer 0
+	TIMER1_CTL_R = 0x00000000;    // turn off timer 1
+  while(1){
+			if(PB0) Pause(); 
+			//if(PB1) Rewind();
+  }
+}
+

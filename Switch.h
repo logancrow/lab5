@@ -15,3 +15,9 @@ void SwitchInit(void);
 //input parameters: none
 //output parameters: none
 void Pause(void);
+
+//waits 10ms
+void DelayWait10ms(uint32_t);
+
+//rewinds and stops
+void Rewind(void);

@@ -60,15 +60,18 @@ void Timer0A_Init(void(*task)(void), uint32_t period){long sr;
   TIMER0_CTL_R = 0x00000001;    // 10) enable TIMER0A
   EndCritical(sr);
 }
-
+#define PF1       (*((volatile uint32_t *)0x40025008))
+#define PF2       (*((volatile uint32_t *)0x40025010))
+#define PF3       (*((volatile uint32_t *)0x40025020))
 void Timer0A_Handler(void){
   TIMER0_ICR_R = TIMER_ICR_TATOCINT;// acknowledge timer0A timeout
+	PF2 ^= 0x04;
   (*PeriodicTask)();                // execute user task
 }
 
 //resets timer0A to specefied frequency
 void Timer0A_Freq(uint32_t period){
-	 TIMER0_CTL_R = 0x00000000;    // 1) disable TIMER0A during setup
+	 //TIMER0_CTL_R = 0x00000000;    // 1) disable TIMER0A during setup
 	 TIMER0_TAILR_R = period-1;    // 4) reload value
-	 TIMER0_CTL_R = 0x00000001;    // 10) enable TIMER0A
+	 //TIMER0_CTL_R = 0x00000001;    // 10) enable TIMER0A
 }

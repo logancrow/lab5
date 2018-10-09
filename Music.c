@@ -13,12 +13,12 @@
 void Music_Play(uint16_t* song1);
 
 struct note song[30] = {
-	 {d2, qnote}, {g1, qnote}, {d2, hnote}, {d2, qnote}, {g1, qnote},
-	 {d2, qnote}, {g1, qnote}, {d2, hnote}, {d2, qnote}, {g1, qnote},
-	 {e2, qnote}, {a1, qnote}, {e2, hnote}, {e2, qnote}, {b2, qnote},
-	 {e2, qnote}, {e2, qnote}, {c2, qnote}, {b2, qnote}, {a1, qnote}, {b2, qnote},
-	 {g1, qnote}, {g1, qnote}, {a2, hnote}, {a2, hnote},
-	 {a2, hnote}, {gf2, qnote}, {a2, qnote}, {gf2, qnote}, {d2, qnote}
+	 {b1, enote}, {g1, enote}, {b1, hnote}, {b1, enote}, {g1, enote},
+	 {b1, enote}, {g1, enote}, {b1, hnote}, {b1, enote}, {g1, enote},
+	 {b1, enote}, {a1, enote}, {b1, hnote}, {b1, enote}, {b1, enote},
+	 {c1, qnote}, {c1, qnote}, {c1, enote}, {b1, enote}, {a1, enote}, {b1, enote},
+	 {g1, qnote}, {g1, qnote}, {a2, wnote},
+   {gf2, enote}, {a2, enote}, {gf2, enote}, {d2, enote}
 };
 
 void Global_Init(){
