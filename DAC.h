@@ -12,6 +12,6 @@
 void DAC_Init(void);
 
 //outputs value to DAC
-//input parameters: value to send to DAC
+//input parameters: none
 //output parameters: none
-void DAC_Out(uint16_t);
+void DAC_Out(void);

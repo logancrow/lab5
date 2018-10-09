@@ -1,9 +1,9 @@
-// Timer0A.h
+// Timer1.h
 // Runs on LM4F120/TM4C123
-// Use Timer0A in periodic mode to request interrupts at a particular
-// period.
+// Use Timer1 in 32-bit periodic mode to request interrupts at a periodic rate
 // Daniel Valvano
-// September 11, 2013
+// May 5, 2015
+
 
 /* This example accompanies the book
    "Embedded Systems: Real Time Interfacing to Arm Cortex M Microcontrollers",
@@ -22,20 +22,14 @@
  http://users.ece.utexas.edu/~valvano/
  */
 
-#ifndef __TIMER0AINTS_H__ // do not include more than once
-#define __TIMER0AINTS_H__
+#ifndef __TIMER1INTS_H__ // do not include more than once
+#define __TIMER1INTS_H__
 
-#include "stdint.h"
 
-// ***************** Timer0A_Init ****************
-// Activate Timer0A interrupts to run user task periodically
-// Inputs:  task is a pointer to a user function
-//          period in units (1/clockfreq), 32 bits
+// ***************** Timer1_Init ****************
+// Activate Timer1 interrupts to run user task periodically at 5hz
+// Inputs:  none
 // Outputs: none
-void Timer0A_Init(void(*task)(void), uint32_t period);
+void Timer1_Init(void);
 
-//resets timer0A to specefied frequency
-void Timer0A_Freq(uint32_t period);
-
-
-#endif // __TIMER0AINTS_H__
+#endif // __TIMER2INTS_H__

@@ -6,35 +6,40 @@
 
 #include "stdint.h"
 
-const double e1 = 659.26;
-const double f1 = 698.46;
-const double gf1 = 739.99;
-const double g1 = 783.99;
-const double a1 = 880;
-const double b1 = 987.77;
-const double c1 = 1046.5;
-const double d2 = 1174.66;
-const double e2 = 1318.51;
-const double f2 = 1396.91;
-const double gf2 = 1479.98;
-const double g2 = 1567.98;
-const double a2 = 1760;
-const double b2 = 1975.53;
-const double c2 = 2093;
+extern uint8_t counter;
+extern uint8_t i;
 
-const uint8_t enote = 1;
-const uint8_t qnote = 2;
-const uint8_t hnote = 4;
-const uint8_t wnote = 8;
+#define e1 3792
+#define f1  3579
+#define gf1  3378
+#define g1  3189
+#define a1  2841
+#define b1  2531
+#define c1  2389
+#define d2  2128
+#define e2  1896
+#define f2  1790
+#define gf2  1689
+#define g2  1594
+#define a2  1420
+#define b2  1265
+#define c2  1194
+
+#define enote  1
+#define qnote  2
+#define hnote  4
+#define wnote  8
 
 struct note{
 	double freq;
 	uint32_t length;
 };
 
-struct note song[100];
+extern struct note song[30];
 
 //plays song through hardware
 //input parameters: pointer to song data structure
 //output parameters: none
-void Music_Play(uint16_t* song);
+void Music_Play(uint16_t*);
+
+void Global_Init(void);

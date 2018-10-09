@@ -440,6 +440,11 @@
               <FileType>1</FileType>
               <FilePath>.\Lab5.c</FilePath>
             </File>
+            <File>
+              <FileName>Music.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Music.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

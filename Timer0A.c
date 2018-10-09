@@ -29,7 +29,6 @@
 #include "..//inc//tm4c123gh6pm.h"
 
 
-
 void DisableInterrupts(void); // Disable interrupts
 void EnableInterrupts(void);  // Enable interrupts
 long StartCritical (void);    // previous I bit, disable interrupts
@@ -65,4 +64,11 @@ void Timer0A_Init(void(*task)(void), uint32_t period){long sr;
 void Timer0A_Handler(void){
   TIMER0_ICR_R = TIMER_ICR_TATOCINT;// acknowledge timer0A timeout
   (*PeriodicTask)();                // execute user task
+}
+
+//resets timer0A to specefied frequency
+void Timer0A_Freq(uint32_t period){
+	 TIMER0_CTL_R = 0x00000000;    // 1) disable TIMER0A during setup
+	 TIMER0_TAILR_R = period-1;    // 4) reload value
+	 TIMER0_CTL_R = 0x00000001;    // 10) enable TIMER0A
 }

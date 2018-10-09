@@ -38,7 +38,7 @@
 #include "Music.h"
 #include "Switch.h"
 #include "DAC.h"
-
+#include "Timer1.h"
 
 #define PF1       (*((volatile uint32_t *)0x40025008))
 #define PF2       (*((volatile uint32_t *)0x40025010))
@@ -64,15 +64,17 @@ int main(void){
 	ST7735_FillScreen(ST7735_BLACK);
 	SwitchInit();
 	DAC_Init();
-//  Timer0A_Init(&UserTask, F20KHZ);     // initialize timer0A (20,000 Hz)
-  Timer0A_Init(&UserTask, F16HZ);  // initialize timer0A (16 Hz)
+  Timer0A_Init(&DAC_Out, F16HZ);  // initialize timer0A (16 Hz)
+	Timer1_Init();
+	Global_Init();
   EnableInterrupts();
 	ST7735_SetCursor(0,0);
 	ST7735_OutString("Play/Pause:      sw0\r");
 	ST7735_SetCursor(0,1);
 	ST7735_OutString("Stop and Rewind: sw1\r");
-  while(1){
-    WaitForInterrupt();
+	//TIMER0_CTL_R &=~ 0x00000001;    // turn off timer 0
+  while(1){		
+    Timer0A_Freq(song[i].freq);
   }
 }
 

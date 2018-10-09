@@ -6,12 +6,13 @@
 
 #include "Music.h"
 
-struct note n1;
-struct note n2;
-struct note n3;
-struct note n4;
 
-struct note song[100] = {
+//plays song through hardware
+//input parameters: pointer to song data structure
+//output parameters: none
+void Music_Play(uint16_t* song1);
+
+struct note song[30] = {
 	 {d2, qnote}, {g1, qnote}, {d2, hnote}, {d2, qnote}, {g1, qnote},
 	 {d2, qnote}, {g1, qnote}, {d2, hnote}, {d2, qnote}, {g1, qnote},
 	 {e2, qnote}, {a1, qnote}, {e2, hnote}, {e2, qnote}, {b2, qnote},
@@ -19,3 +20,8 @@ struct note song[100] = {
 	 {g1, qnote}, {g1, qnote}, {a2, hnote}, {a2, hnote},
 	 {a2, hnote}, {gf2, qnote}, {a2, qnote}, {gf2, qnote}, {d2, qnote}
 };
+
+void Global_Init(){
+	i = 0;
+	counter = 1;
+}
