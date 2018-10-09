@@ -4,7 +4,7 @@
 //Date Created: 10-3-18
 //Date Last Modified: 10-3-18
 
-
+#include "stdint.h"
 
 //Initializes PB0 and PB1 to be inputs
 //input parameters: none
